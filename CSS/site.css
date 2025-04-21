@@ -1,0 +1,13 @@
+
+.item{
+   border: 1px solid black;
+   width: 100px;
+   height: 100px;
+   background-color: aqua;
+   font-size: 2rem;
+}
+
+.container{
+   display: flex;
+  justify-content: space-between;
+}
