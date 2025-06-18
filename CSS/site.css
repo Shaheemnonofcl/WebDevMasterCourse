@@ -1,50 +1,30 @@
-.info {
+.firstlist li:first-child{
+  font-size: 2rem;
+  color: darkblue;
 
+}
+
+
+li:nth-child(3){
+  font-size: 3rem;
+}
+
+h2:nth-of-type(2){
+  color: red;
+}
+
+button:hover{
+  background-color: rgb(132, 132, 172);
+  padding:10px
+  
+}
+
+button:visited{
   background-color: red;
-  font-size: 4rem;
-  border: 1px black solid;
-  color: white;
 }
 
-.main-info{
-  background-color: blue;
-    font-size: 4rem;
-  border: 1px black solid;
-  color: white;
-}
-
-.info-container{
-  display: grid;
-  grid-template-columns: 100px 1fr 100px;
-  grid-gap: 5px;
-  grid-template-areas: 
-  'left1 main right1'
-  'left2 main right2'
-  'left3 main right3' ;
-}
-
-.imain{
-  grid-area: main;
-}
-
-.i2{
-  grid-area: left2;
-}
-
-.i3{
-  grid-area: left3;
-}
-
-@media screen and (max-width:1000px){
-  .info-container{
-  display: grid;
-  grid-template-columns: 100px 1fr 100px;
-  grid-gap: 5px;
-  grid-template-areas: 
-  'left1 main main'
-  'left2 main main'
-  'left3 main main' ;
-}
-
+p::first-letter{
+  font-size: 3rem;
 
 }
+
