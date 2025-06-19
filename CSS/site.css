@@ -1,55 +1,16 @@
-#section1{
-  background-color: aquamarine;
+p {
+  color: #3498db;
 }
-
-header,footer{
-  background-color: blue;
-  color: white;
-  font-size: 3rem;
-  text-align: center;
-
+.container {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
 }
-
-@media print{
- *,
- * *::before,
- * *::after{
-   color: black !important;
-   background: white !important;
-   box-shadow: none !important;
-   text-shadow: none !important;
- }
-
- html{
-   font-size: 16px !important;
- }
-
- header,footer{
-  font-size: 30px !important;
- }  
-
- @page{
-   margin: 40px;
- }
-
- a{
-  text-decoration: none !important;
- }
-
- a[href]::after{
-  content: " (" attr(href) ")";
-  font-size: 0.8em;
-  color: gray;
- }
- 
- body > *:not(main){
-  display: none !important;
- }
-
-    p{
-      orphans: 3;
-      widows: 3;
-
-    }
-
+.container-item {
+  background-color: aqua;
+  height: 100px;
+}
+.container-item p {
+  color: black;
+  text-align: center   ;
 }

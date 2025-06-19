@@ -1,0 +1,26 @@
+@import 'variables.less';
+
+.standard-grid(@gtc){
+     display: grid;
+    grid-gap: 5px;
+    grid-template-columns:$gtc;
+}
+p{
+   color: @brand-color;
+}
+
+.container {
+   
+   .standard-grid("1fr 1fr 1fr");
+
+
+    &-item{
+         background-color: aqua;
+         height: 100px;
+      p{
+         color: black;
+         text-align: center ;
+      }
+
+    }
+}
