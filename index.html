@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCSS/SASS</title>
-    <link rel="stylesheet" href="CSS/site.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>To-Do list</title>
+   <link rel="stylesheet" href="CSS/site.css">
 </head>
 <body>
-    <main>
-        <h1>Advanced CSS Demo</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, nemo illo. Laborum ullam amet molestiae doloremque minima omnis, veritatis quaerat odio, fugiat iusto explicabo facere soluta in, non velit possimus.
-        </p>
+   <main>
+      <h1>Task List Demo</h1>
+      <form id="taskForm" action="#" method="post">
 
-        <div class="container">
-            <div class="container-item"><p>This is container item one</p></div>
-            <div class="container-item"><p>This is container item Two</p></div>
-            <div class="container-item"><p>This is container item Three</p></div>
-        </div>
+         <div>
+            <label for="taskInput">
+            </label>
+            <input type="text" id="taskInput" name="taskItem" placeholder="Enter a task" required>
+            <button id="submitButton" type="submit">Add Task</button>
+            <button type="reset">Clear</button>
+            <button id="clearTaskList">Remove Completed Tasks</button>
+         </div>
+      </form>
+      <div>
+         <ul id="taskList">
+           
+         </ul>
+         <ul id="striken">
+         </ul>
+         
+      </div>
+   </main>
+   <script src="app.js"></script>
+   <script> 
+      app.todoStartup();
+   </script>
 
-    </main>
-    
 </body>
 </html>

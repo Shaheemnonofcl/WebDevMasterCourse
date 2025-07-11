@@ -1,16 +1,12 @@
-p {
-  color: #3498db;
+.completed-task {
+    text-decoration: line-through;
+    color: gray;
 }
-.container {
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(3, 1fr);
+ul{
+      list-style-type: none;
+      line-height: 1.5rem;
 }
-.container-item {
-  background-color: aqua;
-  height: 100px;
-}
-.container-item p {
-  color: black;
-  text-align: center   ;
+
+.striken{
+    margin: 0;
 }
