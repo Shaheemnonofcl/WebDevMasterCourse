@@ -14,8 +14,12 @@
     pageItems.taskList.addEventListener('click',completedTask)
     pageItems.strikenList.addEventListener('click',completedTask)
     pageItems.clearTasks.addEventListener('click',clearCompletedTasks)
+
+    loadFromStorage();
  }  
+
  
+
  function addTask(event) {
    event.preventDefault();
    const li = document.createElement('li');
@@ -26,6 +30,8 @@
 
     pageItems.taskInput.value='';
     pageItems.taskInput.focus();
+  saveToStorage()
+
  }
 
 function completedTask(event){
@@ -33,8 +39,9 @@ function completedTask(event){
 
    const li = event.target;
    if(li.classList.contains('completed-task')){
-
+      
       li.classList.remove('completed-task');
+      pageItems.taskList.appendChild(li)
    }
    else{
 
@@ -43,7 +50,7 @@ function completedTask(event){
       
    }
    
-
+   saveToStorage();
 }
 
 function clearCompletedTasks(event){
@@ -54,6 +61,49 @@ function clearCompletedTasks(event){
    tasks.forEach((el)=>{
       el.remove();
    })
+
+   saveToStorage();
+}
+
+function saveToStorage(){
+
+   const taskList = Array.from(pageItems.taskList.children);
+  const taskText= taskList.map(el=>{
+       return el.innerText;
+   })
+   
+   const strikenList = Array.from(pageItems.strikenList.children);
+   const strikenText = strikenList.map(el=>{
+      return el.innerText;
+   })
+
+   localStorage.setItem('tasklist',JSON.stringify(taskText));
+   localStorage.setItem('strikenlist',JSON.stringify(strikenText));
+}
+
+function loadFromStorage(){
+ const taskListString =  localStorage.getItem('tasklist');
+ const strikenListString =  localStorage.getItem('strikenlist');
+
+const taskList = JSON.parse(taskListString);
+const strikenList = JSON.parse(strikenListString);
+   
+   taskList.forEach(el=>{
+      const li = document.createElement('li');
+      li.innerText = el;
+      pageItems.taskList.appendChild(li);
+
+   })  
+   
+   strikenList.forEach(el=>{
+      const li = document.createElement('li');
+      li.innerText = el;
+      li.classList.add('completed-task');
+      pageItems.strikenList.appendChild(li);
+
+   })
+
+
 }
 
 
